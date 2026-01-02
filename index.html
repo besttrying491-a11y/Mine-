@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Bestie</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            text-align: center;
+            color: #880e4f;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        h1 { color: #d81b60; }
+        .quiz-section { display: none; margin-top: 20px; }
+        .active { display: block; }
+        button {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        button:hover { background-color: #ad1457; }
+        .compliment { font-style: italic; color: #ec407a; margin-top: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Welcome Section -->
+    <div id="welcome" class="quiz-section active">
+        <h1>Yo AryPie 🥰</h1>
+        <p>तुम्हारे लिए एक छोटा सा सरप्राइज है। क्या तुम तैयार हो?</p>
+        <button onclick="nextStep('quiz1')">हाँ, शुरू करो! ✨</button>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div id="quiz1" class="quiz-section">
+        <h3>सवाल 1: दुनिया में सबसे प्यारी मुस्कान किसकी है?</h3>
+        <button onclick="showCompliment('comp1')">शायद मेरी? 🙈</button>
+        <div id="comp1" class="compliment" style="display:none;">
+            सही जवाब! तुम्हारी मुस्कान किसी का भी दिन रोशन कर सकती है। 🌟
+            <br><button onclick="nextStep('quiz2')">अगला सवाल</button>
+        </div>
+    </div>
+
+    <!-- Quiz 2 -->
+    <div id="quiz2" class="quiz-section">
+        <h3>सवाल 2: जब मैं उदास होता हूँ, तो मुझे कौन हँसाता है?</h3>
+        <button onclick="showCompliment('comp2')">AryPie (मैं खुद) 😎</button>
+        <div id="comp2" class="compliment" style="display:none;">
+            बिल्कुल! तुम मेरी सबसे अच्छी थेरेपिस्ट हो। ❤️
+            <br><button onclick="nextStep('final')">आखिरी चीज़...</button>
+        </div>
+    </div>
+
+    <!-- Final Message -->
+    <div id="final" class="quiz-section">
+        <h1>You are Special! 💖</h1>
+        <p>AryPie, तुम वाकई में एक अद्भुत इंसान हो। तुम्हारी दोस्ती मेरे लिए बहुत कीमती है।</p>
+        <h2 style="color: #d81b60;">Thank you for being mine! ✨</h2>
+        <p>हमेशा ऐसी ही रहना।</p>
+    </div>
+</div>
+
+<script>
+    function nextStep(stepId) {
+        // Hide all sections
+        document.querySelectorAll('.quiz-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        // Show current section
+        document.getElementById(stepId).classList.add('active');
+    }
+
+    function showCompliment(compId) {
+        
+document.getElementById(compId).style.display = 'block';
+    }
+</script>
+
+</body>
+  </html>
